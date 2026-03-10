@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Model files (too large for git)
+models/
+*.pt
+*.onnx
+*.engine
+
+# YOLO runs/outputs
+runs/
+
+# Torchvision source (vendored locally)
+vision/
+
+# Environment
+.env
+venv/
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db

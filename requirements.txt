@@ -1,0 +1,18 @@
+# Jetson Nano GPU Inference Server — Dependencies
+# ──────────────────────────────────────────────────
+# NOTE: On Jetson Nano, install PyTorch & torchvision from NVIDIA wheels first:
+#   https://forums.developer.nvidia.com/t/pytorch-for-jetson/
+# Then install the rest with:  pip install -r requirements.txt
+
+fastapi>=0.100.0
+uvicorn[standard]>=0.23.0
+python-multipart>=0.0.6
+
+opencv-python>=4.8.0
+numpy<2.0.0
+
+ultralytics>=8.0.0
+
+# torch and torchvision should already be installed from NVIDIA Jetson wheels
+# torch>=2.0.0
+# torchvision>=0.15.0 (built from source on Jetson)
