@@ -165,9 +165,11 @@ async def infer(
         }
 
         # ── Run detection ─────────────────────────────────────────────────
+        from fastapi.concurrency import run_in_threadpool
         t0 = time.time()
-        detections = _process_frame(
-            img,
+        detections = await run_in_threadpool(
+            _process_frame,
+            frame=img,
             gps_data=gps_data,
             bearing=bearing,
             left_offset_m=left_offset_m,
@@ -367,7 +369,7 @@ if __name__ == "__main__":
     print("    GET  /api/health  — health check")
     print("    GET  /api/stats   — server statistics")
     print("=" * 55)
-    print(f"  Listening on  http://0.0.0.0:8000")
+    print(f"  Listening on  http://10.42.0.1:8000")
     print("=" * 55)
 
-    uvicorn.run(app, host="0.0.0.0", port=8000, log_level="info")
+    uvicorn.run(app, host="10.42.0.1", port=8000, log_level="info")

@@ -35,7 +35,7 @@ fi
 
 # ── Launch server ─────────────────────────────────────────────
 echo ""
-echo "Starting inference server on http://0.0.0.0:8000 ..."
+echo "Starting inference server on http://10.42.0.1:8000 ..."
 echo ""
 
 exec python3 server.py
